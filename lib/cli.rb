@@ -21,7 +21,8 @@ class CliController
       input = gets.strip.downcase
 
       if input.to_i > 0 && input.to_i.between?(1, @recipes.length)
-        puts @recipes[input.to_i - 1]
+        the_recipe = @recipes[input.to_i - 1]
+        puts "#{the_recipe.name} - #{the_recipe.description} - #{the_recipe.url}"
       elsif input == "list"
         list_recipes
       else
