@@ -1,4 +1,4 @@
-class Recipe
+class Recipe #the only other class that Recipes will interact with is Scraper. Its the only other class its aware of.
   attr_accessor :name, :description, :url
 
   @@top_recipes = []
@@ -34,6 +34,11 @@ class Recipe
       recipe.description = recipe_attributes[:description]
       recipe.url = recipe_attributes[:url]
       recipe.save
+    end
+
+    def scrape_ba
+      #code I wish I had: scraped_hash = Scraper.new.scrape_ba_recipes
+      #self.create_from_hash(scraped_hash)
     end
 
   end
