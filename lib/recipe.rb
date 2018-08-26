@@ -11,7 +11,7 @@ class Recipe
     self.class.top_recipes << self
   end
 
-  def create_from_hash(recipe_hash) #you are given a recipe hash, which you will iterate over and
+  def create_from_hash(recipe_hash) #you are given a recipe hash, which you will iterate over and instantiate new Recipe objects.
     recipe_hash.each do |recipe_name, recipe_attributes|
       recipe = Recipe.new
       recipe.name = recipe_name
