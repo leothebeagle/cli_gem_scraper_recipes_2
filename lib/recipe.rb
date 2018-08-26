@@ -4,7 +4,23 @@ class Recipe
   @@top_recipes = []
 
   def self.top_recipes
-    @@top_recipes
+    # @@top_recipes
+    recipe_1 = Recipe.new
+    recipe_1.name = "pasta"
+    recipe_1.description = "lovely pasta"
+    recipe_1.url = "https://www.pasta.com"
+
+    recipe_2 = Recipe.new
+    recipe_2.name = "rice"
+    recipe_2.description = "fluffy, Persian rice"
+    recipe_2.url = "https://www.rice.com"
+
+    recipe_3 = Recipe.new
+    recipe_3.name = "meatballs"
+    recipe_3.description = "Dawud Basha"
+    recipe_3.url = "https://www.dawudbasha.com"
+
+    [recipe_1, recipe_2, recipe_3]
   end
 
   def save
