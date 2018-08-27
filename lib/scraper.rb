@@ -15,7 +15,15 @@ class Scraper #here is where you will pull the data and put it into a hash forma
     recipes
   end
 
-  def scrape_recipe_directions
+  def self.scrape_recipe_directions(recipe_url) #this is a method that'll extract instructions for a single recipe. this method will actually get called by another metho in Recipe.
+    recipe_directions = Nokogiri::HTML(open(recipe_url))
+
+    instructions = { :ingredients => [], :steps => "" }
+
+    #ingredients selector and then each of them gets pushed into the ingredients array. instructions[:ingredients] << ingredient
+    #scrape the ingredients and then push them into an array
+    #scrape instructions as a string
+    #this information will be used by the method in Recipe that called this method, to add attributes to existing objects
 
   end
 

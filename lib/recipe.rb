@@ -25,6 +25,8 @@ class Recipe #the only other class that Recipes will interact with is Scraper. I
     scraped_hash = Scraper.scrape_ba_recipes
     self.create_from_hash(scraped_hash)
   end
+
+
 end
 
 
