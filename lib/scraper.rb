@@ -30,3 +30,4 @@ end
 
 #css selector for the main body of instructions: .css("ul.steps")
 #css selector for all instructions including any notes and chef notes: test.css("ul.steps li.step p").text
+#css selector for ingredients: .css("ul.ingredients__group li.ingredient")
