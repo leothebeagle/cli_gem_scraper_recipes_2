@@ -14,7 +14,7 @@ class Recipe #the only other class that Recipes will interact with is Scraper. I
   def self.create_from_hash(recipe_hash) #you are given a recipe hash, which you will iterate over and instantiate new Recipe objects.
     recipe_hash.each do |recipe_name, recipe_attributes|
       recipe = Recipe.new
-      recipe.name = recipe_name
+      recipe.name = recipe_name.to_s
       recipe.description = recipe_attributes[:description]
       recipe.url = recipe_attributes[:url]
       recipe.save
