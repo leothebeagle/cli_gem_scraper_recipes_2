@@ -20,7 +20,7 @@ class Scraper #here is where you will pull the data and put it into a hash forma
     instructions = { :ingredients => [], :steps => "" }
 
     # instructions[:steps] = recipe_directions.css("ul.steps li.step p").text #fetches the instructions and places them in the hash
-    instructions[:steps] = recipe_directions.css("li.step p").text
+    instructions[:steps] = recipe_directions.css("li.step p").text #there are several formats to the recipes. some have gifs and ordered lists whereas others are input as unordered lists.
 
     recipe_directions.css("ul.ingredients__group li.ingredient").each do |ingredient| #the initial css selector gets all the ingredient blocks. it then extracts the text and pushes that into the ingredients array in the instructions hash
       instructions[:ingredients] << ingredient.text
