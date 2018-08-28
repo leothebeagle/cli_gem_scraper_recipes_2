@@ -32,6 +32,7 @@ class Recipe #the only other class that Recipes will interact with is Scraper. I
       instructions = Scraper.scrape_recipe_directions(recipe_url)
       recipe.ingredients = instructions[:ingredients]
       recipe.directions = instructions[:directions]
+
     end
   end
 
