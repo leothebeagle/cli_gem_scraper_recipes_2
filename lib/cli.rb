@@ -24,7 +24,20 @@ class CliController
 
       if input.to_i > 0 && input.to_i.between?(1, @recipes.length)
         the_recipe = @recipes[input.to_i - 1]
-        puts "#{the_recipe.name} - #{the_recipe.description} - #{the_recipe.url}"
+        selection = nil
+
+        while selection != "exit"
+          puts "You selected #{the_recipe.name}. To view the ingredients type 'ingredients' and to view the directions type 'directions' or type exit"
+          selection = gets.strip.downcase
+            if selection == 'ingredients'
+              puts the_recipe.ingredients
+            elsif selection == 'directions'
+              puts the_recipe.directions
+            else
+              puts "I'm sorry, I dont understand that"
+            end
+        end
+        # puts "#{the_recipe.name} - #{the_recipe.description} - #{the_recipe.url}"
       elsif input == "list"
         list_recipes
       else
