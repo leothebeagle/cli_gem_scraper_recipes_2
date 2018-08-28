@@ -1,5 +1,5 @@
 class Recipe #the only other class that Recipes will interact with is Scraper. Its the only other class its aware of.
-  attr_accessor :name, :description, :url,
+  attr_accessor :name, :description, :url
 
   @@top_recipes = []
 
@@ -29,7 +29,7 @@ class Recipe #the only other class that Recipes will interact with is Scraper. I
   def self.add_recipe_instructions
     self.top_recipes.each do |recipe|
       recipe_url = recipe.url
-      instructions = Scraper.scrape_recipe_directions(recipe_url)
+      instructions = Scraper.scrape_recipe_instructions(recipe_url)
       recipe.ingredients = instructions[:ingredients]
       recipe.directions = instructions[:directions]
 
