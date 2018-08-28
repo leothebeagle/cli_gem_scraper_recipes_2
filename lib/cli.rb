@@ -18,7 +18,7 @@ class CliController
   def menu
     input = nil
     while input != "exit"
-      puts "If you'd like the ingredient list for a recipe, type in the recipe number. To view the recipe list, type list or type exit"
+      puts "If you'd like more information on a recipe, type in the recipe number. To view the recipe list, type list or type exit"
       input = gets.strip.downcase
 
       if input.to_i > 0 && input.to_i.between?(1, @recipes.length)
