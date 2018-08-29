@@ -1,7 +1,9 @@
 class CliController
 
   def call
-    puts "Hi, there. Welcome to the recipe app!!The top recipes for this week are:"
+    puts ""
+    puts "     ---------- Hi, there. Welcome to the recipe app!!The top recipes for this week are: ----------"
+    puts ""
     Scraper.scrape_ba_recipes
     Scraper.scrape_recipe_instructions
     list_recipes
@@ -13,13 +15,14 @@ class CliController
 
     @recipes.each.with_index(1) do |recipe, index|
       puts "#{index}. #{recipe.name} - #{recipe.description} - #{recipe.url}"
+      puts ""
     end
   end
 
   def menu
     input = nil
     while input != "exit"
-      puts "If you'd like more information on a recipe, type in the recipe number. To view the recipe list, type list or type exit"
+      puts "------- If you'd like more information on a recipe, type in the recipe number. To view the recipe list, type 'list' or type 'exit' -------"
       input = gets.strip.downcase
 
       if input.to_i > 0 && input.to_i.between?(1, @recipes.length)
