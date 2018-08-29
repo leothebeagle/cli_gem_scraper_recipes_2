@@ -33,6 +33,8 @@ class CliController
               puts the_recipe.ingredients
             elsif selection == 'directions'
               puts the_recipe.directions
+            elsif selection == "exit"
+              break
             else
               puts "I'm sorry, I dont understand that"
             end
@@ -40,6 +42,8 @@ class CliController
         # puts "#{the_recipe.name} - #{the_recipe.description} - #{the_recipe.url}"
       elsif input == "list"
         list_recipes
+      elsif input == "exit"
+        break
       else
         puts "not sure what you want, enter the recipe number, list, or exit"
       end
