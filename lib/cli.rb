@@ -2,8 +2,8 @@ class CliController
 
   def call
     puts "Hi, there. Welcome to the recipe app!!The top recipes for this week are:"
-    Recipe.create_from_ba_scrape
-    Recipe.add_recipe_instructions
+    Scraper.scrape_ba_recipes
+    Scraper.scrape_recipe_instructions
     list_recipes
     menu
   end
